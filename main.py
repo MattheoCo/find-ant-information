@@ -23,7 +23,7 @@ class Create_sp:
         self.conseil = conseil
         self.v=[(self.sp, self.nom, self.fondation, self.foreuse, self.nourriture, self.temp, self.humi, self.diap, self.temp_diap, self.origine, self.nb_gyne, self.tp_nid, self.conseil)]
         c.executemany("INSERT INTO mirme VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", self.v)
-    
+        conn.commit()
 def affiche_info_sp(espece, nom):
     esp = str(espece)
     n = str(nom)
@@ -64,17 +64,17 @@ def main():
     affiche_info_sp(espece, nom)
 
 
-f1 = Create_sp("lasius", "niger", "claustrale", "non", "omnivore", "20 à 26°", "40 à 70%", "obligatoire", "5 à 10°", "Europe", "monogyne", "béton cellulaire, plâtre ou plexiglas", "C’est une espèce facile, elle pardonne bon nombres d’erreurs de débutant, et se développe rapidement même si les conditions ne sont pas respecté à la lettre. ")
-f2 = Create_sp("lasius", "flavus", "claustrale", "non", "omnivore", "24 à 26°", "80 à 100%", "obligatoire", "6 à 15°", "Europe", "polygyne", "béton cellulaire ou plexiglas", " Elles se nourrissent de miellat de pucerons de racines. Leur nourriture est donc directement dans les galeries car elles les élèves. Une ADC au plus proche du nid sera donc parfait.")
-f3 = Create_sp("lasius", "emarginatus", "claustrale", "non", "omnivore", "20 à 28°", "15 à 40%", "obligatoire", "5 à 10°", "Europe", "monogyne", "béton cellulaire, plâtre ou plexiglas", "Espèce facile à élever, l'étape de la fondation n'est pas compliqué à passer. L'éspèce ne sera pas embettante pour l'alimentation. Malgrés sa timidité au depart, elle gagnera vite en assurance grace a son nombre d'ouvrière.")
-f4 = Create_sp("lasius","brunneus","claustrale","non","omnivore","20 à 28°","40 à 60%","obligatoire","5 à 10°","Europe","monogyne", "béton cellulaire, plâtre ou plexiglas", "Espèce facile à élever, l'étape de la fondation n'est pas compliqué à passer. L'éspèce ne sera pas embettante pour l'alimentation.")
+#f1 = Create_sp("lasius", "niger", "claustrale", "non", "omnivore", "20 à 26°", "40 à 70%", "obligatoire", "5 à 10°", "Europe", "monogyne", "béton cellulaire, plâtre ou plexiglas", "C’est une espèce facile, elle pardonne bon nombres d’erreurs de débutant, et se développe rapidement même si les conditions ne sont pas respecté à la lettre. ")
+#f2 = Create_sp("lasius", "flavus", "claustrale", "non", "omnivore", "24 à 26°", "80 à 100%", "obligatoire", "6 à 15°", "Europe", "polygyne", "béton cellulaire ou plexiglas", " Elles se nourrissent de miellat de pucerons de racines. Leur nourriture est donc directement dans les galeries car elles les élèves. Une ADC au plus proche du nid sera donc parfait.")
+#f3 = Create_sp("lasius", "emarginatus", "claustrale", "non", "omnivore", "20 à 28°", "15 à 40%", "obligatoire", "5 à 10°", "Europe", "monogyne", "béton cellulaire, plâtre ou plexiglas", "Espèce facile à élever, l'étape de la fondation n'est pas compliqué à passer. L'éspèce ne sera pas embettante pour l'alimentation. Malgrés sa timidité au depart, elle gagnera vite en assurance grace a son nombre d'ouvrière.")
+#f4 = Create_sp("lasius","brunneus","claustrale","non","omnivore","20 à 28°","40 à 60%","obligatoire","5 à 10°","Europe","monogyne", "béton cellulaire, plâtre ou plexiglas", "Espèce facile à élever, l'étape de la fondation n'est pas compliqué à passer. L'éspèce ne sera pas embettante pour l'alimentation.")
 
 
 fenetre = tk.Tk()
 #===================================
 #           On assigne les paramètre de la fenètre
 #===================================
-fenetre.iconbitmap('icone.ico')
+#fenetre.iconbitmap('icone.ico')
 fenetre.title('Dico des fourmis')
 fenetre.configure(bg='#BDFFBE')
 
